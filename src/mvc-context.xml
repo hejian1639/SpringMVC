@@ -15,7 +15,6 @@
 	<!-- 加载Spring的全局配置文件 -->
 	<import resource="root-context.xml" />
 	<context:annotation-config />
-    <mvc:annotation-driven />
 	<!-- SpringMVC配置 -->
 
 	<!-- 通过component-scan 让Spring扫描org.swinglife.controller下的所有的类，让Spring的代码注解生效 -->
