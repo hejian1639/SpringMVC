@@ -1,6 +1,5 @@
 package org.swinglife.controller;
 
-import java.io.Serializable;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
