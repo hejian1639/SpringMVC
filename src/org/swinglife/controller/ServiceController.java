@@ -5,17 +5,18 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 /***
  * 
@@ -23,74 +24,14 @@ import org.springframework.web.servlet.ModelAndView;
  * 
  */
 @Controller
-public class HomeController {
+@RequestMapping("/service")
+//@Path("/service")
+//@Produces(MediaType.APPLICATION_JSON)
+//@Consumes({MediaType.APPLICATION_JSON,
+//           MediaType.APPLICATION_XML,
+//           MediaType.APPLICATION_FORM_URLENCODED})
+public class ServiceController {
     Map<Integer, JsonObject> objectMap = new ConcurrentHashMap<Integer, JsonObject>(); 
-
-    @RequestMapping({ "/" })
-    public String home() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-
-        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
-
-        obj.getMessage();
-        return "page/home.jsp";
-    }
-
-    /***
-     * @return
-     */
-    @MyRequestMapping(value = "/index", method = RequestMethod.GET)
-    public String index() {
-        return "pages/index.html";
-    }
-
-    /***
-     * @return
-     */
-    @RequestMapping(value = "/date", method = RequestMethod.GET)
-    public String date() {
-        return "page/Date.jsp";
-    }
-
-    @RequestMapping("other")
-    public String other() {
-        return "page/other.jsp";
-    }
-
-    @RequestMapping("service test")
-    public String service_test() {
-        return "service_test.html";
-    }
-
-    /***
-     * @param username
-     * @param password
-     * @return
-     */
-    @RequestMapping(value = "login", method = RequestMethod.POST)
-    public ModelAndView login(String username, String password) {
-        if (this.checkParams(new String[] { username, password })) {
-            ModelAndView mav = new ModelAndView("succ.jsp");
-            mav.addObject("username", username);
-            mav.addObject("password", password);
-            return mav;
-        }
-        return new ModelAndView("home");
-    }
-
-    /***
-     * @param params
-     * @return
-     */
-    private boolean checkParams(String[] params) {
-        for (String param : params) {
-            if (param == "" || param == null || param.isEmpty()) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     
     @RequestMapping(value = "/object/{id}", method = RequestMethod.GET)
     @ResponseBody
@@ -222,12 +163,6 @@ public class HomeController {
     @ResponseBody
     public void throwNullPointerException() {
         throw new NullPointerException();
-    }
-
-    @ExceptionHandler(NullPointerException.class)
-    public String defaultErrorHandler(HttpServletRequest req, Exception exception) {
-
-        return "defaultErrorPage.jsp";
     }
 
 }
