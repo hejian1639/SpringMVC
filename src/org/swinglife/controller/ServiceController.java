@@ -5,10 +5,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,11 +21,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/service")
-//@Path("/service")
-//@Produces(MediaType.APPLICATION_JSON)
-//@Consumes({MediaType.APPLICATION_JSON,
-//           MediaType.APPLICATION_XML,
-//           MediaType.APPLICATION_FORM_URLENCODED})
 public class ServiceController {
     Map<Integer, JsonObject> objectMap = new ConcurrentHashMap<Integer, JsonObject>(); 
     
@@ -108,25 +99,6 @@ public class ServiceController {
 
         System.out.println("Textual part: " + textualPart + ", numeric part: " + numericPart);
         return "someResult";
-    }
-
-    static public class JsonObject implements Serializable {
-        private static final long serialVersionUID = -6526203853383136386L;
-        private Integer id;
-        private String name;
-        public String getName() {
-            return name;
-        }
-        public void setName(String name) {
-            this.name = name;
-        }
-        public Integer getId() {
-            return id;
-        }
-        public void setId(Integer id) {
-            this.id = id;
-        }
-
     }
 
     @RequestMapping(value = "/spring_post_service", method = RequestMethod.POST, consumes = "application/json")

@@ -29,7 +29,7 @@ public class WebController {
     /***
      * @return
      */
-    @MyRequestMapping(value = "/index", method = RequestMethod.GET)
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() {
         return "pages/index.html";
     }

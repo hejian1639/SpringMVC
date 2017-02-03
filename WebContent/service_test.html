@@ -28,7 +28,7 @@
 
 
         $.ajax({
-            url : 'jersey/object',
+            url : 'service/object',
             data:JSON.stringify({
                 id : 1,
                 name : 'John',
@@ -39,12 +39,13 @@
             async : true,
             success : function(data, status, xhr) {
                 $.ajax({
-                    url : 'jersey/object/1',
+                    url : 'service/object/1',
                     cache : false,
                     type : "get",
                     async : true,
                     success : function(data, status, xhr) {
-                        $("#output1").html("get path test: " + JSON.stringify(data));
+                        $("#output1").text("get path test: " + JSON.stringify(data));
+                        $("#output2").text("get path test: " + data);
                     },
                     error : function(jqXHR, textStatus, errorThrown) {
                     }
@@ -70,7 +71,7 @@
 
  
         $.ajax({
-            url : 'object',
+            url : 'spring_get_boolean_service',
             data:JSON.stringify({
                 id : 2,
                 name : 'Mike',
@@ -115,12 +116,12 @@
         });
 
         $.ajax({
-            url : 'spring_get_boolean_service',
+            url : 'service/spring_get_boolean_service',
             cache : false,
             type : "get",
             async : true,
             success : function(data, status, xhr) {
-                $("#output5").html("post json get html test: " + data);
+                $("#output5").html("get boolean value: " + data);
             },
             error : function(jqXHR, textStatus, errorThrown) {
             }
