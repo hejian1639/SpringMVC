@@ -6,6 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -136,4 +137,12 @@ public class ServiceController {
         throw new NullPointerException();
     }
 
+    @ExceptionHandler(Exception.class)
+    @ResponseBody
+    public Exception handleError(HttpServletRequest req, Exception exception)
+            throws Exception {
+
+        return exception;
+    }
+    
 }

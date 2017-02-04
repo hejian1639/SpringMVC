@@ -1,11 +1,15 @@
 package org.swinglife.controller;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 /***
@@ -81,11 +85,25 @@ public class WebController {
         return true;
     }
 
+    @RequestMapping(value = "/throwNullPointerException", method = RequestMethod.GET)
+    public void throwNullPointerException() {
+        throw new NullPointerException();
+    }
     
     @ExceptionHandler(NullPointerException.class)
-    public String defaultErrorHandler(HttpServletRequest req, Exception exception) {
+    public ModelAndView defaultErrorHandler(HttpServletRequest req, Exception exception) {
 
-        return "defaultErrorPage.jsp";
+
+
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("exception", exception);
+        mav.addObject("url", req.getRequestURL());
+        mav.addObject("timestamp", new Date().toString());
+        mav.addObject("status", 500);
+
+        mav.setViewName("support.html");
+        return mav;
+//        return "defaultErrorPage.jsp";
     }
 
 }

@@ -42,8 +42,8 @@
 		</property>
 	</bean>
 
-	<bean class="org.swinglife.controller.ExampleExceptionHandlerExceptionResolver">
+<!-- 	<bean class="org.swinglife.controller.ExampleExceptionHandlerExceptionResolver">
 		<property name="order" value="-1" />
 	</bean>
-
+ -->
 </beans>

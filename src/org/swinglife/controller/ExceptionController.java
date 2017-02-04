@@ -19,21 +19,21 @@ import com.alibaba.fastjson.JSON;
  * @author swinglife
  * 
  */
-@ControllerAdvice
+//@ControllerAdvice
 public class ExceptionController {
 
-    @ExceptionHandler(Exception.class)
-    public void errorResponse(Exception ex, HttpServletResponse response) throws IOException {
+//    @ExceptionHandler(Exception.class)
+    public void errorResponse(Exception exception, HttpServletResponse response) throws IOException {
 
         Map<String, String> errorMap = new HashMap<String, String>();
 
-        errorMap.put("errorMessage", ex.getMessage());
+        errorMap.put("errorMessage", exception.getMessage());
 
         StringWriter sw = new StringWriter();
 
         PrintWriter pw = new PrintWriter(sw);
 
-        ex.printStackTrace(pw);
+        exception.printStackTrace(pw);
 
         String stackTrace = sw.toString();
 
