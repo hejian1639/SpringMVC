@@ -101,9 +101,8 @@ public class WebController {
         mav.addObject("timestamp", new Date().toString());
         mav.addObject("status", 500);
 
-        mav.setViewName("support.html");
+        mav.setViewName("support.jsp");
         return mav;
-//        return "defaultErrorPage.jsp";
     }
 
 }
