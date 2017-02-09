@@ -29,9 +29,9 @@ public class DefaultServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		getServletContext().getAttribute(Globals.RESOURCES_ATTR);
        
-//		String path = request.getPathInfo();
-		String path = getRelativePath(request, false);
-		File downloadFile = new File("D:/htdocs/" + path);
+		String path = request.getPathInfo();
+//		String path = getRelativePath(request, false);
+		File downloadFile = new File("C:\\Users\\John\\Desktop\\Apache24\\htdocs" + path);
 		OutputStream output = null;
 		String contentType = Files.probeContentType(downloadFile.toPath());
 		if(contentType == null){
