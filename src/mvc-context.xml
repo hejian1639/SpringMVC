@@ -12,8 +12,6 @@
     http://www.springframework.org/schema/task/spring-task-3.1.xsd
 	http://www.springframework.org/schema/context 
 	http://www.springframework.org/schema/context/spring-context.xsd">
-	<!-- 加载Spring的全局配置文件 -->
-	<import resource="root-context.xml" />
 	<context:annotation-config />
 	<!-- SpringMVC配置 -->
 
