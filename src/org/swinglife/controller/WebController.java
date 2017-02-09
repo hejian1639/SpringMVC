@@ -38,6 +38,11 @@ public class WebController {
         return "pages/index.html";
     }
 
+    @RequestMapping(value = "/react_demo/**", method = RequestMethod.GET)
+    public String react() {
+        return "react_demo/index.html";
+    }
+    
     /***
      * @return
      */
