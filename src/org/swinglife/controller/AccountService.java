@@ -31,9 +31,6 @@ public class AccountService {
     return accountMapper.getAccountByUsername(username);
   }
 
-  public Account getAccount(String username, String password) {
-    return accountMapper.getAccountByUsernameAndPassword(username, password);
-  }
 
   @Transactional
   public void insertAccount(Account account) {
@@ -45,4 +42,5 @@ public class AccountService {
     accountMapper.updateAccount(account);
   }
 
+  
 }

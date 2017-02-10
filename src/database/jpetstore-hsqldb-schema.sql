@@ -35,17 +35,17 @@ create table signon (
 
 create table account (
     userid varchar(80) not null,
-    email varchar(80) not null,
-    firstname varchar(80) not null,
-    lastname varchar(80) not null,
+    email varchar(80) null,
+    firstname varchar(80) null,
+    lastname varchar(80) null,
     status varchar(2)  null,
-    addr1 varchar(80) not null,
+    addr1 varchar(80) null,
     addr2 varchar(40) null,
-    city varchar(80) not  null,
-    state varchar(80) not null,
-    zip varchar(20) not null,
-    country varchar(20) not null,
-    phone varchar(80) not null,
+    city varchar(80)  null,
+    state varchar(80) null,
+    zip varchar(20) null,
+    country varchar(20) null,
+    phone varchar(80) null,
     constraint pk_account primary key (userid)
 );
 

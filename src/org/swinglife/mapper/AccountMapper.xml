@@ -24,49 +24,23 @@
   <cache />
 
   <select id="getAccountByUsername" resultType="Account">
-    SELECT
-          ACCOUNT.USERID as username,
-          ACCOUNT.EMAIL,
-          ACCOUNT.FIRSTNAME,
-          ACCOUNT.LASTNAME,
-          ACCOUNT.STATUS,
-          ACCOUNT.ADDR1 AS address1,
-          ACCOUNT.ADDR2 AS address2,
-          ACCOUNT.CITY,
-          ACCOUNT.STATE,
-          ACCOUNT.ZIP,
-          ACCOUNT.COUNTRY,
-          ACCOUNT.PHONE
-    FROM ACCOUNT
-    WHERE ACCOUNT.USERID = #{username}
+    select
+          account.userid as username,
+          account.email,
+          account.firstname,
+          account.lastname,
+          account.status,
+          account.addr1 as address1,
+          account.addr2 as address2,
+          account.city,
+          account.state,
+          account.zip,
+          account.country,
+          account.phone
+    from account
+    where account.userid = #{username}
   </select>
 
-  <select id="getAccountByUsernameAndPassword" resultType="Account">
-    SELECT
-      SIGNON.USERNAME,
-      ACCOUNT.EMAIL,
-      ACCOUNT.FIRSTNAME,
-      ACCOUNT.LASTNAME,
-      ACCOUNT.STATUS,
-      ACCOUNT.ADDR1 AS address1,
-      ACCOUNT.ADDR2 AS address2,
-      ACCOUNT.CITY,
-      ACCOUNT.STATE,
-      ACCOUNT.ZIP,
-      ACCOUNT.COUNTRY,
-      ACCOUNT.PHONE,
-      PROFILE.LANGPREF AS languagePreference,
-      PROFILE.FAVCATEGORY AS favouriteCategoryId,
-      PROFILE.MYLISTOPT AS listOption,
-      PROFILE.BANNEROPT AS bannerOption,
-      BANNERDATA.BANNERNAME
-    FROM ACCOUNT, PROFILE, SIGNON, BANNERDATA
-    WHERE ACCOUNT.USERID = #{param1}
-      AND SIGNON.PASSWORD = #{param2}
-      AND SIGNON.USERNAME = ACCOUNT.USERID
-      AND PROFILE.USERID = ACCOUNT.USERID
-      AND PROFILE.FAVCATEGORY = BANNERDATA.FAVCATEGORY
-  </select>
 
   <update id="updateAccount" parameterType="Account">
     UPDATE ACCOUNT SET
