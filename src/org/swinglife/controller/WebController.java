@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class WebController {
 
     @RequestMapping({ "/" })
-    public String home() {
+    public String root() {
 //        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 //
 //        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
@@ -28,6 +28,11 @@ public class WebController {
         return "index.html";
     }
 
+    @RequestMapping({ "/input" })
+    public String home() {
+        return "page/home.jsp";
+    }
+    
     /***
      * @return
      */

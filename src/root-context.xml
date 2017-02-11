@@ -21,7 +21,6 @@
 	<!-- in-memory database and a datasource -->
 	<jdbc:embedded-database id="dataSource">
 		<jdbc:script location="classpath:database/jpetstore-hsqldb-schema.sql" />
-		<jdbc:script location="classpath:database/jpetstore-hsqldb-dataload.sql" />
 	</jdbc:embedded-database>
 
 	<!-- transaction manager, use DataSourceTransactionManager" for JDBC local 

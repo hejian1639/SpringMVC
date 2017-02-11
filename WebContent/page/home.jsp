@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=GB18030"
-    pageEncoding="GB18030"%>
+	pageEncoding="GB18030"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,16 +7,65 @@
 <title>home</title>
 </head>
 <body>
-<h2>spring mvc ÊµÀý</h2>
+	<h2>spring mvc ÊµÀý</h2>
 
-<form action="login" method="post">
-	username:<input type="text" name="username" />
-	<p>
-	password:<input type="password" name="password"/>
-	<p>
-	<input type="submit" value="submit" />
-</form>
+	username:
+	<input id="username" />
+	<br />
+	<br /> email:
+	<input id="email" />
+	<br />
+	<br />
+	<button id="submit">submit</button>
 
-<a href="other">other page</a>
+	<br />
+	<br />
+
+	username:
+	<input id="query_username" />
+	<br />
+	<br />
+	<button id="query">query</button>
+
+	<br />
+	<br />
+	<div id="result" />
+
+	<script src="js/jquery.js"></script>
+
+	<script>
+		$("#submit").click(function() {
+			$.ajax({
+				url : 'mybatis_service/account',
+				data : JSON.stringify({
+					username : $("#username").val(),
+					email : $("#email").val(),
+				}),
+				contentType : "application/json",
+				cache : false,
+				type : "post",
+				async : true,
+				success : function(data, status, xhr) {
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+				},
+			});
+		});
+
+		$("#query").click(function() {
+			$.ajax({
+				url : 'mybatis_service/account/'+$("#query_username").val(),
+				cache : false,
+				type : "get",
+				async : true,
+				success : function(data, status, xhr) {
+					$("#result").text(JSON.stringify(data));
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+				}
+			});
+		});
+	</script>
+
 </body>
 </html>
