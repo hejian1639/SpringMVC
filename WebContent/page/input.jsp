@@ -10,22 +10,23 @@
 	<h2>spring mvc ÊµÀý</h2>
 
 	username:
-	<input id="username" />
-	<br />
-	<br /> email:
+	<input id="username" /> email:
 	<input id="email" />
-	<br />
 	<br />
 	<button id="submit">submit</button>
 
 	<br />
+	<br /> username:
+	<input id="delete_username" />
 	<br />
+	<button id="delete">delete</button>
 
-	username:
+	<br />
+	<br /> username:
 	<input id="query_username" />
 	<br />
-	<br />
 	<button id="query">query</button>
+
 
 	<br />
 	<br />
@@ -52,9 +53,22 @@
 			});
 		});
 
+		$("#delete").click(function() {
+			$.ajax({
+				url : 'mybatis_service/account/' + $("#delete_username").val(),
+				cache : false,
+				type : "delete",
+				async : true,
+				success : function(data, status, xhr) {
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+				}
+			});
+		});
+
 		$("#query").click(function() {
 			$.ajax({
-				url : 'mybatis_service/account/'+$("#query_username").val(),
+				url : 'mybatis_service/account/' + $("#query_username").val(),
 				cache : false,
 				type : "get",
 				async : true,

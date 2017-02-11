@@ -15,22 +15,15 @@ public class WebController {
 
     @RequestMapping({ "/" })
     public String root() {
-//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-//
-//        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
-//
-//        obj.getMessage();
         return "index.html";
     }
 
     @RequestMapping({ "/input" })
     public String home() {
-        return "page/home.jsp";
+        return "page/input.jsp";
     }
     
-    /***
-     * @return
-     */
+ 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() {
         return "pages/index.html";
@@ -56,7 +49,7 @@ public class WebController {
 
     @RequestMapping("service test")
     public String service_test() {
-        return "service_test.html";
+        return "page/service_test.html";
     }
 
     /***

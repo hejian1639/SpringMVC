@@ -18,6 +18,6 @@
 create table account (
     username varchar(80) not null,
     email varchar(80) null,
-    constraint pk_account primary key (username)
+    primary key (username)
 );
 

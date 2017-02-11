@@ -43,5 +43,10 @@
       (#{email}, #{username})
   </insert>
 
-
+  <delete id="deleteAccount">
+    delete
+    from account
+    where account.username = #{username}
+  </delete>
+  
 </mapper>

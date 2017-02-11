@@ -37,7 +37,16 @@ public class MyBatisServiceController {
         account = accountService.getAccount(account.getUsername());
         System.out.println("get account: " + account.getUsername());
     }
-	
+
+    @RequestMapping(value = "/account/{username}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteAccount(@PathVariable final String username) {
+        System.out.println("delete account request: " + username);
+
+        accountService.deleteAccount(username);
+        
+    }
+    
     @RequestMapping(value = "/account_without_transaction", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
     public void postAccountWithoutTransaction(@RequestBody Account account) throws Exception {

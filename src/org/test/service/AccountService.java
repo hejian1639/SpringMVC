@@ -17,6 +17,8 @@ package org.test.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.test.data.Account;
 import org.test.mapper.AccountMapper;
@@ -24,23 +26,26 @@ import org.test.mapper.AccountMapper;
 @Service
 public class AccountService {
 
-  @Autowired
-  private AccountMapper accountMapper;
+	@Autowired
+	private AccountMapper accountMapper;
 
-  public Account getAccount(String username) {
-    return accountMapper.getAccountByUsername(username);
-  }
+	@Transactional(propagation = Propagation.SUPPORTS, isolation = Isolation.REPEATABLE_READ, readOnly = true)
+	public Account getAccount(String username) {
+		return accountMapper.getAccountByUsername(username);
+	}
 
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.REPEATABLE_READ)
+	public void insertAccount(Account account) {
+		accountMapper.insertAccount(account);
+	}
 
-  @Transactional
-  public void insertAccount(Account account) {
-    accountMapper.insertAccount(account);
-  }
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.REPEATABLE_READ)
+	public void updateAccount(Account account) {
+		accountMapper.updateAccount(account);
+	}
 
-  @Transactional
-  public void updateAccount(Account account) {
-    accountMapper.updateAccount(account);
-  }
-
-  
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.REPEATABLE_READ)
+	public void deleteAccount(String username) {
+		accountMapper.deleteAccount(username);
+	}
 }

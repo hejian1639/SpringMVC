@@ -28,5 +28,6 @@ public interface AccountMapper {
 
   void updateAccount(Account account);
 
+  void deleteAccount(String username);
 
 }
