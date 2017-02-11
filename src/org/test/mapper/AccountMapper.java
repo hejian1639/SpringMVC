@@ -15,7 +15,7 @@
  */
 package org.test.mapper;
 
-import org.test.domain.Account;
+import org.test.data.Account;
 
 
 public interface AccountMapper {

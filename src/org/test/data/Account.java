@@ -13,7 +13,7 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.test.domain;
+package org.test.data;
 
 import java.io.Serializable;
 

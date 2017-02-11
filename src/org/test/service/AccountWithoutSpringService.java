@@ -19,7 +19,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.test.domain.Account;
+import org.test.data.Account;
 import org.test.mapper.AccountMapper;
 
 @Service

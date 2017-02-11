@@ -1,6 +1,7 @@
-package org.test.service;
+package org.test.data;
 
-class Person {
+
+public class Person {
 
     private String firstName;
 
