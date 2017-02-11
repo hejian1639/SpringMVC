@@ -1,4 +1,4 @@
-package org.swinglife.controller;
+package org.test.service;
 
 class Person {
 

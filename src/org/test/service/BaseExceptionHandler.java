@@ -1,4 +1,4 @@
-package org.swinglife.controller;
+package org.test.service;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;

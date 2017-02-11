@@ -1,4 +1,4 @@
-package org.swinglife.controller;
+package org.test.service;
 
 import java.util.HashMap;
 import java.util.Map;

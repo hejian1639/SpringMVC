@@ -1,4 +1,4 @@
-package org.swinglife.controller;
+package org.test.web;
 
 import java.util.Date;
 
@@ -10,11 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-/***
- * 
- * @author swinglife
- * 
- */
 @Controller
 public class WebController {
 

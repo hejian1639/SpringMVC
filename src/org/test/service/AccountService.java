@@ -13,13 +13,13 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.swinglife.controller;
+package org.test.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.swinglife.domain.Account;
-import org.swinglife.mapper.AccountMapper;
+import org.test.domain.Account;
+import org.test.mapper.AccountMapper;
 
 @Service
 public class AccountService {

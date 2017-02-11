@@ -32,7 +32,7 @@
 
 	<!-- enable component scanning and autowire (beware that this does not enable 
 		mapper scanning!) -->
-	<context:component-scan base-package="org.swinglife.controller" />
+	<context:component-scan base-package="org.test.service" />
 
 	<!-- enable transaction demarcation with annotations -->
 	<tx:annotation-driven />
@@ -40,10 +40,10 @@
 	<!-- define the SqlSessionFactory -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="typeAliasesPackage" value="org.swinglife.domain" />
+		<property name="typeAliasesPackage" value="org.test.domain" />
 	</bean>
 
 	<!-- scan for mappers and let them be autowired -->
-	<mybatis:scan base-package="org.swinglife.mapper" />
+	<mybatis:scan base-package="org.test.mapper" />
 
 </beans>

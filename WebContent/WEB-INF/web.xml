@@ -15,7 +15,7 @@
 		<listener-class>org.springframework.web.util.WebAppRootListener</listener-class>
 	</listener>
 	<listener>
-		<listener-class>org.swinglife.controller.ContextStartListener</listener-class>
+		<listener-class>org.test.service.ContextStartListener</listener-class>
 	</listener>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -65,7 +65,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>myDefault</servlet-name>
-		<servlet-class>org.swinglife.controller.DefaultServlet</servlet-class>
+		<servlet-class>org.test.service.DefaultServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>myDefault</servlet-name>
@@ -85,7 +85,7 @@
 	</filter>
 	<filter>
 		<filter-name>httpSessionFilter</filter-name>
-		<filter-class>org.swinglife.controller.HttpSessionFilter</filter-class>
+		<filter-class>org.test.service.HttpSessionFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>httpSessionFilter</filter-name>
@@ -93,7 +93,7 @@
 	</filter-mapping>
 	<servlet>
 		<servlet-name>HelloServlet</servlet-name>
-		<servlet-class>org.swinglife.controller.HelloServlet</servlet-class>
+		<servlet-class>org.test.service.HelloServlet</servlet-class>
 		<load-on-startup>2</load-on-startup>
 	</servlet>
 	<servlet-mapping>
@@ -102,7 +102,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>DynamicJSP</servlet-name>
-		<servlet-class>org.swinglife.controller.DynamicJSP</servlet-class>
+		<servlet-class>org.test.service.DynamicJSP</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
@@ -114,7 +114,7 @@
 		<servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
 		<init-param>
 			<param-name>com.sun.jersey.config.property.packages</param-name>
-			<param-value>org.swinglife.controller</param-value>
+			<param-value>org.test.service</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

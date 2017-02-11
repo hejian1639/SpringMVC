@@ -1,4 +1,4 @@
-package org.swinglife.controller;
+package org.test.service;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

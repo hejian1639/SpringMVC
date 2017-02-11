@@ -1,4 +1,4 @@
-package org.swinglife.controller;
+package org.test.service;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

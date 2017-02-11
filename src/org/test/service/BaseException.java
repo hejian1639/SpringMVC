@@ -1,4 +1,4 @@
-package org.swinglife.controller;
+package org.test.service;
 
 import javax.ws.rs.core.Response.Status;
 

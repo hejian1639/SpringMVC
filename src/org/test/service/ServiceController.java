@@ -1,4 +1,4 @@
-package org.swinglife.controller;
+package org.test.service;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

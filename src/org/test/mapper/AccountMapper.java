@@ -13,9 +13,9 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.swinglife.mapper;
+package org.test.mapper;
 
-import org.swinglife.domain.Account;
+import org.test.domain.Account;
 
 
 public interface AccountMapper {
