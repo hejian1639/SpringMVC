@@ -1,16 +1,20 @@
 package org.spring.controller;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.spring.data.Account;
 import org.spring.service.AccountService;
 import org.spring.service.AccountWithoutSpringService;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 @RequestMapping("/mybatis_service")
@@ -58,4 +62,11 @@ public class MyBatisServiceController {
         System.out.println("get account: " + account.getUsername());
     }
 
+	@ResponseStatus(value = HttpStatus.CONFLICT, reason = "Data integrity violation")
+	@ExceptionHandler(Exception.class)
+	public void handleError(HttpServletRequest req, Exception exception) {
+
+		exception.printStackTrace();
+	}
+    
 }
