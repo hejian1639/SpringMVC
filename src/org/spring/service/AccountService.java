@@ -13,15 +13,15 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.test.service;
+package org.spring.service;
 
+import org.spring.data.Account;
+import org.spring.mapper.AccountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.test.data.Account;
-import org.test.mapper.AccountMapper;
 
 @Service
 public class AccountService {

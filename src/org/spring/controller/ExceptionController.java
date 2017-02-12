@@ -1,4 +1,4 @@
-package org.test.controller;
+package org.spring.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;

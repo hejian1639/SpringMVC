@@ -1,4 +1,4 @@
-package org.test.servlet;
+package org.spring.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;

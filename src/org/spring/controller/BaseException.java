@@ -1,4 +1,4 @@
-package org.test.controller;
+package org.spring.controller;
 
 import javax.ws.rs.core.Response.Status;
 

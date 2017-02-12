@@ -1,16 +1,16 @@
-package org.test.controller;
+package org.spring.controller;
 
 import javax.annotation.Resource;
 
+import org.spring.data.Account;
+import org.spring.service.AccountService;
+import org.spring.service.AccountWithoutSpringService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.test.data.Account;
-import org.test.service.AccountService;
-import org.test.service.AccountWithoutSpringService;
 
 @Controller
 @RequestMapping("/mybatis_service")

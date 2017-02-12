@@ -1,8 +1,9 @@
-package org.test.controller;
+package org.spring.controller;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
 
+import org.spring.data.Person;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.MediaType;
@@ -10,7 +11,6 @@ import org.springframework.http.converter.AbstractHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.util.StreamUtils;
-import org.test.data.Person;
 
 public class WiselyMessageConverter extends AbstractHttpMessageConverter<Person> {
 

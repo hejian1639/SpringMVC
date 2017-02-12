@@ -1,4 +1,4 @@
-package org.test.data;
+package org.spring.data;
 
 
 public class Person {

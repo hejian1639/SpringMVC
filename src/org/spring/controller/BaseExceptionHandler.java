@@ -1,4 +1,4 @@
-package org.test.controller;
+package org.spring.controller;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;

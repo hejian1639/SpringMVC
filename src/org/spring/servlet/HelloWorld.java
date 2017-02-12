@@ -1,4 +1,4 @@
-package org.test.servlet;
+package org.spring.servlet;
 
 public class HelloWorld {
    private String message;

@@ -13,9 +13,9 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.test.mapper;
+package org.spring.mapper;
 
-import org.test.data.Account;
+import org.spring.data.Account;
 
 
 public interface AccountMapper {

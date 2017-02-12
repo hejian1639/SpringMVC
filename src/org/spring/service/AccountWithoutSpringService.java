@@ -13,14 +13,14 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.test.service;
+package org.spring.service;
 
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.spring.data.Account;
+import org.spring.mapper.AccountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.test.data.Account;
-import org.test.mapper.AccountMapper;
 
 @Service
 public class AccountWithoutSpringService {

@@ -1,4 +1,4 @@
-package org.test.servlet;
+package org.spring.servlet;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
