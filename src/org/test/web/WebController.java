@@ -18,9 +18,20 @@ public class WebController {
         return "index.html";
     }
 
-    @RequestMapping({ "/input" })
+    @RequestMapping({ "/restful_test" })
     public String home() {
-        return "page/input.jsp";
+        return "page/restful.jsp";
+    }
+
+    @RequestMapping(value = "login", method = RequestMethod.POST)
+    public ModelAndView login(String username, String password) {
+        if (this.checkParams(new String[] { username, password })) {
+            ModelAndView mav = new ModelAndView("page/succ.jsp");
+            mav.addObject("username", username);
+            mav.addObject("password", password);
+            return mav;
+        }
+        return new ModelAndView("home");
     }
     
  
@@ -52,21 +63,6 @@ public class WebController {
         return "page/service_test.html";
     }
 
-    /***
-     * @param username
-     * @param password
-     * @return
-     */
-    @RequestMapping(value = "login", method = RequestMethod.POST)
-    public ModelAndView login(String username, String password) {
-        if (this.checkParams(new String[] { username, password })) {
-            ModelAndView mav = new ModelAndView("page/succ.jsp");
-            mav.addObject("username", username);
-            mav.addObject("password", password);
-            return mav;
-        }
-        return new ModelAndView("home");
-    }
 
     /***
      * @param params
@@ -81,6 +77,11 @@ public class WebController {
         return true;
     }
 
+    @RequestMapping(value = "/throw_exception", method = RequestMethod.GET)
+    public String throwException() {
+        return "page/exception.html";
+    }
+    
     @RequestMapping(value = "/throwNullPointerException", method = RequestMethod.GET)
     public void throwNullPointerException() {
         throw new NullPointerException();

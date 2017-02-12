@@ -7,7 +7,7 @@
 <title>home</title>
 </head>
 <body>
-	<h2>spring mvc ÊµÀý</h2>
+	<h2>restful test</h2>
 
 	username:
 	<input id="username" /> email:
