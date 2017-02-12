@@ -1,4 +1,4 @@
-package org.test.controller;
+package org.test.servlet;
 
 import java.io.IOException;
 

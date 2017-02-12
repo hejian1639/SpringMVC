@@ -1,4 +1,4 @@
-package org.test.controller;
+package org.test.servlet;
 
 public class HelloWorld {
    private String message;
