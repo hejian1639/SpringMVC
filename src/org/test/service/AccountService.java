@@ -24,7 +24,7 @@ import org.test.data.Account;
 import org.test.mapper.AccountMapper;
 
 @Service
-public class AccountService implements IAccountService{
+public class AccountService {
 
 	@Autowired
 	private AccountMapper accountMapper;

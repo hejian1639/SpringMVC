@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.test.data.Account;
+import org.test.service.AccountService;
 import org.test.service.AccountWithoutSpringService;
-import org.test.service.IAccountService;
 
 @Controller
 @RequestMapping("/mybatis_service")
 public class MyBatisServiceController {
 	
 	@Resource
-	private IAccountService accountService;
+	private AccountService accountService;
 	
     @Resource
     private AccountWithoutSpringService accountWithoutSpringService;

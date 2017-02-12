@@ -48,29 +48,5 @@
 	<!-- scan for mappers and let them be autowired -->
 	<mybatis:scan base-package="org.test.mapper" />
 
-	<!-- 声明式事务管理 -->
-	<tx:advice id="txAdvice" transaction-manager="transactionManager">
-		<tx:attributes>
-			<tx:method name="delete*" propagation="REQUIRED" isolation="REPEATABLE_READ"
-				read-only="false" />
-			<tx:method name="insert*" propagation="REQUIRED" isolation="REPEATABLE_READ"
-				read-only="false" />
-			<tx:method name="save*" propagation="REQUIRED" isolation="REPEATABLE_READ"
-				read-only="false" />
-			<tx:method name="update*" propagation="REQUIRED" isolation="REPEATABLE_READ"
-				read-only="false" />
-			<tx:method name="find*" propagation="SUPPORTS" read-only="true" />
-			<tx:method name="get*" propagation="SUPPORTS" read-only="true" />
-			<tx:method name="select*" propagation="SUPPORTS" read-only="true" />
-			<tx:method name="remove*" propagation="REQUIRED" isolation="REPEATABLE_READ"
-				read-only="false" />
-		</tx:attributes>
-	</tx:advice>
-	<aop:config>
-		<aop:pointcut id="baseServiceMethods" expression="execution(* org.test.service.*.*(..))" />
-		<aop:advisor pointcut-ref="baseServiceMethods" advice-ref="txAdvice" />
-	</aop:config>
-
-	<aop:aspectj-autoproxy />
 
 </beans>
