@@ -1,4 +1,4 @@
-package org.test.web;
+package org.test.controller;
 
 import java.util.Date;
 

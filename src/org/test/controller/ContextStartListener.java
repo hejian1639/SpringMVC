@@ -1,4 +1,4 @@
-package org.test.service;
+package org.test.controller;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

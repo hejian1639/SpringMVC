@@ -1,4 +1,4 @@
-package org.test.service;
+package org.test.controller;
 
 import javax.annotation.Resource;
 
@@ -9,13 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.test.data.Account;
+import org.test.service.AccountWithoutSpringService;
+import org.test.service.IAccountService;
 
 @Controller
 @RequestMapping("/mybatis_service")
 public class MyBatisServiceController {
 	
 	@Resource
-	private AccountService accountService;
+	private IAccountService accountService;
 	
     @Resource
     private AccountWithoutSpringService accountWithoutSpringService;
@@ -34,8 +36,6 @@ public class MyBatisServiceController {
 
         accountService.insertAccount(account);
         
-        account = accountService.getAccount(account.getUsername());
-        System.out.println("get account: " + account.getUsername());
     }
 
     @RequestMapping(value = "/account/{username}", method = RequestMethod.DELETE)

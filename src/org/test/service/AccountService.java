@@ -24,7 +24,7 @@ import org.test.data.Account;
 import org.test.mapper.AccountMapper;
 
 @Service
-public class AccountService {
+public class AccountService implements IAccountService{
 
 	@Autowired
 	private AccountMapper accountMapper;
@@ -34,7 +34,7 @@ public class AccountService {
 		return accountMapper.getAccountByUsername(username);
 	}
 
-	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.REPEATABLE_READ)
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.REPEATABLE_READ, rollbackFor=Exception.class)
 	public void insertAccount(Account account) {
 		accountMapper.insertAccount(account);
 	}
@@ -48,4 +48,5 @@ public class AccountService {
 	public void deleteAccount(String username) {
 		accountMapper.deleteAccount(username);
 	}
+	
 }

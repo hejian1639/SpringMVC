@@ -1,4 +1,4 @@
-package org.test.service;
+package org.test.controller;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,4 +1,4 @@
-package org.test.service;
+package org.test.controller;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
