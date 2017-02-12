@@ -17,7 +17,7 @@ public class AccountServiceTest {
 	private AccountService accountService;
 	
 	@Test
-	public void testGetAdsById(){
+	public void test(){
 		Account account = new Account();
 		account.setUsername("john");
 		account.setEmail("hejian@sina.com");
