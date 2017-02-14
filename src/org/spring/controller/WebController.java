@@ -23,6 +23,11 @@ public class WebController {
         return "page/restful.jsp";
     }
 
+    @RequestMapping({ "/service_test" })
+    public String serviceTest() {
+        return "page/service_test.html";
+    }
+    
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public ModelAndView login(String username, String password) {
         if (this.checkParams(new String[] { username, password })) {
