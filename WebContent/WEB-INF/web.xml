@@ -62,6 +62,8 @@
 		<url-pattern>*.css</url-pattern>
 		<url-pattern>*.png</url-pattern>
 		<url-pattern>*.mp4</url-pattern>
+		<url-pattern>*.m4a</url-pattern>
+		<url-pattern>*.ogg</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>myDefault</servlet-name>

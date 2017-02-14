@@ -45,6 +45,10 @@ public class WebController {
         return "react_demo/index.html";
     }
     
+    @RequestMapping(value = "/react_third_party", method = RequestMethod.GET)
+    public String reactThirdParty() {
+        return "react_third_party/index.html";
+    }
     /***
      * @return
      */

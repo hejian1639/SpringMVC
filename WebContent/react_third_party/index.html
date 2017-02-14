@@ -1,0 +1,22 @@
+<html>
+
+<body>
+  <div id="root"></div>
+  <script type="text/javascript" src="require.js"></script>
+  <script type="text/javascript">
+    requirejs.config({
+      paths: {
+        'react': '/SpringMVC/react_demo/lib/react',
+        'react-dom': '/SpringMVC/react_demo/lib/react-dom',
+        'react-addons-css-transition-group': '/SpringMVC/react_demo/lib/react-addons-css-transition-group',
+        'react-transition': '/SpringMVC/react_demo/lib/react-transition',
+        'header': '/SpringMVC/react_demo/dist/header',
+      }
+    });
+    // Start loading the main app file. Put all of
+    // your application logic in there.
+    requirejs(['bundle']);
+  </script>
+</body>
+
+</html>
