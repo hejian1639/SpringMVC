@@ -13,18 +13,21 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class AccountServiceTest {
 
-	@Autowired
-	private AccountService accountService;
-	
-	@Test
-	public void test(){
-		Account account = new Account();
-		account.setUsername("john");
-		account.setEmail("hejian@sina.com");
+    @Autowired
+    private AccountService accountService;
+
+    @Test
+    public void test() {
+        Account account = new Account();
+        account.setUsername("john");
+        account.setEmail("hejian@sina.com");
         accountService.insertAccount(account);
         Account account2 = accountService.getAccount("john");
+        Assert.assertEquals("name not equal", account.getUsername(), account2.getUsername());
         Assert.assertEquals("email not equal", account.getEmail(), account2.getEmail());
-//        Assert.assertEquals("email equal", "hello", account2.getEmail());
-	}
+        // Assert.assertEquals("email equal", "hello", account2.getEmail());
+        accountService.deleteAccount("john");
+    }
 
+    
 }

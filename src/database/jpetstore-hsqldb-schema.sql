@@ -16,8 +16,8 @@
 
 
 create table account (
-    username varchar(80) not null,
-    email varchar(80) null,
-    primary key (username)
+    user_name varchar(64) not null,
+    email varchar(64) null,
+    primary key (user_name)
 );
 
