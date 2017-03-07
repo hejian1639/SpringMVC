@@ -32,6 +32,10 @@ public class DefaultServlet extends HttpServlet {
 		String path = request.getPathInfo();
 //		String path = getRelativePath(request, false);
 		File downloadFile = new File("C:\\Users\\John\\Desktop\\Apache24\\htdocs" + path);
+		if(downloadFile.isDirectory()){
+			downloadFile = new File("C:\\Users\\John\\Desktop\\Apache24\\htdocs" + path + "index.html");
+			
+		}
 		OutputStream output = null;
 		String contentType = Files.probeContentType(downloadFile.toPath());
 		if(contentType == null){
