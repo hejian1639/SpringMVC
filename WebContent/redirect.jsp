@@ -2,5 +2,5 @@
 <%@ page import="java.util.*"%>
 <%@ page session="false" %> 
 <%
-	response.sendRedirect("http://localhost:8083/SpringMVC/index");
+	response.sendRedirect("/SpringMVC/index");
 %>
