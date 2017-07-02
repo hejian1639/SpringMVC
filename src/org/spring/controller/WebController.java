@@ -36,6 +36,11 @@ public class WebController {
 		return "page/service_test.html";
 	}
 
+	@RequestMapping({ "/redirect" })
+	public String redirect() {
+		return "redirect.jsp";
+	}
+	
 	@RequestMapping({ "/websocket_test" })
 	public String websocketTest() {
 		return "echo.html";
