@@ -50,6 +50,13 @@ public class MyBatisServiceController {
         accountService.deleteAccount(username);
         
     }
+
+    @RequestMapping(value = "/account_without_transaction/{username}", method = RequestMethod.GET)
+	@ResponseBody
+	public Account getAccountWithoutTransaction(@PathVariable final String username) throws Exception {
+        System.out.println("get account request: " + username);
+		return accountWithoutSpringService.getAccount(username);
+	}
     
     @RequestMapping(value = "/account_without_transaction", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
@@ -58,8 +65,6 @@ public class MyBatisServiceController {
 
         accountWithoutSpringService.insertAccount(account);
         
-        account = accountService.getAccount(account.getUsername());
-        System.out.println("get account: " + account.getUsername());
     }
 
 	@ResponseStatus(value = HttpStatus.CONFLICT, reason = "Data integrity violation")

@@ -28,7 +28,7 @@ public class WebController {
 	public String restfulTest() {
 		HelloWorld obj = (HelloWorld) SpringBeanUtils.getBeanByName("helloWorld");
 		obj.getMessage();
-		return "page/restful.jsp";
+		return "page/restful.html";
 	}
 
 	@RequestMapping({ "/service_test" })
